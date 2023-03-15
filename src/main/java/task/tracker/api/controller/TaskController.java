@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,11 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.transaction.Transactional;
 import task.tracker.api.task.Task;
+import task.tracker.api.task.TaskListDataTransfer;
 import task.tracker.api.task.TaskRepository;
 import task.tracker.api.task.TaskSaveDataTransfer;
 import task.tracker.api.task.TaskUpdateDataTransfer;
-import task.tracker.api.task.TaskListDataTransfer;
-
 
 @RestController
 @RequestMapping("/tasks")
@@ -57,7 +55,5 @@ public class TaskController {
     public Optional<Task> findTask(@PathVariable Long id) {
         return repository.findById(id);
     }
-
-
 
 }
